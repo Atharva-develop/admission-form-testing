@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admission Query Form</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(to right, #6a11cb, #2575fc);
+      color: #fff;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .form-container {
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      width: 100%;
+      max-width: 400px;
+      padding: 20px;
+      color: #333;
+    }
+    .form-container h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #6a11cb;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    .form-group label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    .form-group input, 
+    .form-group select {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+    .form-group input:focus, 
+    .form-group select:focus {
+      border-color: #6a11cb;
+      outline: none;
+    }
+    .form-btn {
+      width: 100%;
+      background: #6a11cb;
+      color: #fff;
+      padding: 12px 15px;
+      font-size: 18px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .form-btn:hover {
+      background: #2575fc;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Admission Query Form</h2>
+    <form id="admissionForm">
+      <div class="form-group">
+        <label for="studentName">Student Name</label>
+        <input type="text" id="studentName" placeholder="Enter student's name" required>
+      </div>
+      <div class="form-group">
+        <label for="studentClass">Class</label>
+        <select id="studentClass" required>
+          <option value="" disabled selected>Select class</option>
+          <!-- Dynamically generate class options -->
+          <script>
+            for (let i = 1; i <= 12; i++) {
+              document.write(`<option value="${i}">${i}</option>`);
+            }
+          </script>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <input type="number" id="phone" placeholder="Enter phone number" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="Enter email address" required>
+      </div>
+      <button type="submit" class="form-btn">Submit</button>
+    </form>
+  </div>
+  <script>
+      function populateTable() {}
+  </script>
+  <script type="module" src="script.js"></script>
+</body>
+</html>
